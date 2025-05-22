@@ -7,8 +7,8 @@ export default function EducationForm({educationDetails, setEducationDetails, ad
 	const schoolProperty = setFieldProperty("School", "school", educationDetails, setEducationDetails)
 	const cityProperty = setFieldProperty("City", "city", educationDetails, setEducationDetails)
 	const countryProperty = setFieldProperty("Country", "country", educationDetails, setEducationDetails)
-	const startDateProperty = setFieldProperty("Start date", "start-date", educationDetails, setEducationDetails)
-	const endDateProperty = setFieldProperty("End date", "end-date", educationDetails, setEducationDetails)
+	const startDateProperty = setFieldProperty("Start date", "startDate", educationDetails, setEducationDetails)
+	const endDateProperty = setFieldProperty("End date", "endDate", educationDetails, setEducationDetails)
 	const onsubmit = () => {
 		if(educationDetails.values.some((value)=> {value === ''})){
 			setEducationDetails({...educationDetails, submitted: true})
@@ -20,15 +20,15 @@ export default function EducationForm({educationDetails, setEducationDetails, ad
 
 	return(
 	<Form className = {'education-detail-form'} onSubmit = {onsubmit}>
-		<Input placeholder ={'Enter Your degree here'} {...degreeProperty} />
-		<Input placeholder = {'Enter the school where you recieved your degree'} {...schoolProperty} />
-		<Input placeholder = {'Enter your school\'s city'} {...cityProperty}/>
-		<Input placeholder = {'Enter your school\'s country'} {...countryProperty} />
+		<Input iconName={"degree"} placeholder ={'Enter Your degree here'} {...degreeProperty} />
+		<Input iconName={"school"} placeholder = {'Enter the school where you recieved your degree'} {...schoolProperty} />
+		<Input iconName={"map"} placeholder = {'Enter your school\'s city'} {...cityProperty}/>
+		<Input iconName={"map"} placeholder = {'Enter your school\'s country'} {...countryProperty} />
 		<div className = {"education-span"}>
-		    <Input type = {"date"} {...startDateProperty} />
-		    <Input type = {"date"} {...endDateProperty} />
+		    <Input iconName={"calendar"} type = {"date"} {...startDateProperty} />
+		    <Input iconName={"calendar"} type = {"date"} {...endDateProperty} />
 		</div>
-		<Input type = {"submit"} value = {"add"} />
+		<Input iconName={"add"} type = {"submit"} value = {"add"} />
 	</Form>
 )
 }

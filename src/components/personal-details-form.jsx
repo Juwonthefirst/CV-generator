@@ -11,11 +11,11 @@ export default function PersonalDetailsForm({personalDetails, setPersonalDetails
 	
 	return(
 		<Form className= {"personal-details-form"}>
-		    <Input placeholder={"Enter your first name here..."} {...firstNameProperty}/>
-		    <Input placeholder={"Enter your last name here..."} {...lastNameProperty}/>
-		    <Input type = {'email'} placeholder={"likethis@gmail.com"} {...emailProperty} />
-		    <Input placeholder={"Enter yourphone number here...."} type = {'number'} {...phoneProperty} />
-		    <Input placeholder={"Where do you live"} {...locationProperty}/>
+		    <Input placeholder={"Enter your first name here..."} iconName={"user"} {...firstNameProperty}/>
+		    <Input placeholder={"Enter your last name here..."} iconName={"user"} {...lastNameProperty}/>
+		    <Input type = {'email'} iconName={"mail"} placeholder={"likethis@gmail.com"} {...emailProperty} />
+		    <Input iconName={"phone"} placeholder={"Enter yourphone number here...."} type = {'number'} {...phoneProperty} />
+		    <Input iconName={"map"} placeholder={"Where do you live"} {...locationProperty}/>
 		</Form>
 	)
 }
