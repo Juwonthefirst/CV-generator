@@ -1,21 +1,10 @@
-export default function Input({label, type = 'text', required = true, property, setProperty, id}){
-	let error = null
-	const fieldValue = property[id]
-
-	const updateDisplay = function(event){
-		const newProperty = {...property, [id]: event.target.value}
-		setProperty(newProperty)
-	}
-
-	if (!fieldValue && property.submitted){
-		error = `You need to input your ${label} here`
-	}
+export default function Input({label, type = 'text', required = true, value, onChange, id, error, placeholder}){
 
 	return(
-		<>
+		<div className = {id + ' field'}>
 			<label htmlFor = {id}>{label}</label>
-			<input type={type} id={id} required = {required} value = {fieldValue} onChange = {updateDisplay}/>
-		{error && <p className= {id + '-error error'}>{error}</p>}
-		</>
+			<input type={type} id={id} required = {required} value = {value} onChange = {onChange} placeholder={placeholder}/>
+			<p className= {id + '-error error'}>{error}</p>
+		</div>
 	)
 }

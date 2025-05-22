@@ -1,5 +1,5 @@
 
-export default function Form({onSubmit, children}){
+export default function Form({onSubmit,className, children}){
 	
 	const handleSubmit = function(event){
 		event.preventDefault()
@@ -7,7 +7,7 @@ export default function Form({onSubmit, children}){
 	}
 
 	return(
-		<form noValidate onSubmit = {handleSubmit}>
+		<form noValidate onSubmit = {handleSubmit} className = {className}>
 		    { children }
 		</form>
 	)
