@@ -1,4 +1,4 @@
-import { User, Mail, Phone, MapPin, GraduationCap, School, CalendarDays, CirclePlus} from 'lucide-react'
+import { User, Mail, Phone, MapPin, GraduationCap, School, CalendarDays, CirclePlus, Pencil, Trash2, Building, BriefcaseBusiness, Layers, FolderGit2, Award } from 'lucide-react'
 
 const iconLibrary  = {
 	user:<User />,
@@ -13,6 +13,9 @@ const iconLibrary  = {
 	trash: <Trash2 />,
 	company: <Building />,
 	buisness: <BriefcaseBusiness />,
+	stack: <Layers />,
+	project: <FolderGit2 />,
+	skill: <Award />
 }
 
 export default function Icon({iconName}){

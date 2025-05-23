@@ -1,5 +1,6 @@
 import Input from './Input.jsx'
 import Form from './Form.jsx'
+import Add from './Add.jsx'
 import { setFieldProperty } from '../helper.js'
 
 export default function WorkExperienceForm({workExperience, setWorkExperience, addWorkExperience}){
@@ -11,7 +12,7 @@ export default function WorkExperienceForm({workExperience, setWorkExperience, a
 	const descriptionProperty = setFieldProperty("Description", "extra", workExperience, setWorkExperience)
 
 	const onsubmit = () => {
-		if(workExperience.values.some((value)=> {value === ''})){
+		if(Object.values(workExperience).some((value)=> value === '')){
 			setWorkExperience({...workExperience, submitted: true})
 			return
 		}
@@ -27,7 +28,7 @@ export default function WorkExperienceForm({workExperience, setWorkExperience, a
 			<Input iconName={"calendar"} type = {"date"} {...endDateProperty} />
 		    </div>
 		    <Input placeholder={"Describe your experience in your previous place of work"} {...descriptionProperty} />
-		    <Input iconName={"add"} value={"add"} type={"submit"} />
+		    <Add />
 		</Form>
 	)
 }

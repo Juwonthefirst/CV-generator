@@ -1,5 +1,6 @@
 import Input from './Input.jsx'
 import Form from './Form.jsx'
+import Add from './Add.jsx'
 import { setFieldProperty } from '../helper.js'
 
 export default function EducationForm({educationDetails, setEducationDetails, addEducation}){
@@ -10,7 +11,7 @@ export default function EducationForm({educationDetails, setEducationDetails, ad
 	const startDateProperty = setFieldProperty("Start date", "startDate", educationDetails, setEducationDetails)
 	const endDateProperty = setFieldProperty("End date", "endDate", educationDetails, setEducationDetails)
 	const onsubmit = () => {
-		if(educationDetails.values.some((value)=> {value === ''})){
+		if(Object.values(educationDetails).some((value)=> value === '')){
 			setEducationDetails({...educationDetails, submitted: true})
 			return
 		}
@@ -28,7 +29,7 @@ export default function EducationForm({educationDetails, setEducationDetails, ad
 		    <Input iconName={"calendar"} type = {"date"} {...startDateProperty} />
 		    <Input iconName={"calendar"} type = {"date"} {...endDateProperty} />
 		</div>
-		<Input iconName={"add"} type = {"submit"} value = {"add"} />
+		<Add />
 	</Form>
 )
 }
